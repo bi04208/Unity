@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             this.transform.Translate(new Vector2(2.0f * Time.deltaTime, 0.0f));
             Flip_Player(horizontal);
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
             if(isGrounded)
             {
