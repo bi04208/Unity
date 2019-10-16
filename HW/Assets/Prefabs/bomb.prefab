@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 423351669}
   m_Layer: 0
   m_Name: bomb
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,7 +836,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -885,32 +885,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14de7afbe4420e049812826e5caaa0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchPoints:
-  - {fileID: 909553975}
-  - {fileID: 1166627151}
-  - {fileID: 1972990863}
-  - {fileID: 762989979}
-  - {fileID: 734807135}
-  - {fileID: 1036552454}
-  - {fileID: 1553126226}
-  - {fileID: 210058375}
-  - {fileID: 1929802582}
-  - {fileID: 841971344}
-  - {fileID: 10363210}
-  - {fileID: 199927600}
-  - {fileID: 2141645799}
-  - {fileID: 1814352937}
-  - {fileID: 654198287}
-  - {fileID: 1528211180}
-  - {fileID: 257031869}
-  - {fileID: 1181616537}
-  - {fileID: 1384462300}
-  - {fileID: 1396536592}
-  - {fileID: 1847401032}
-  - {fileID: 983203223}
-  - {fileID: 1975345159}
-  - {fileID: 547318541}
-  TouchRadius: 0.2
-  whatIsTouched:
-    serializedVersion: 2
-    m_Bits: 4294967295

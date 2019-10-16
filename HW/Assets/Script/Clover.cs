@@ -5,34 +5,23 @@ using UnityEngine;
 public class Clover : MonoBehaviour
 {
     private Rigidbody2D Clover_RigidBody;
+    private Collider2D Clover_Collider;
     // Start is called before the first frame update
 
-    [SerializeField]
-    private Transform[] TouchPoints;
-    [SerializeField]
-    private float TouchRadius;
-    [SerializeField]
-    private LayerMask whatIsTouched;
-
-    private bool isTouched;
     void Start()
     {
         Set_Position();
         Clover_RigidBody = GetComponent<Rigidbody2D>();
+        Clover_Collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isTouched = IsTouched();
-        if (isTouched)
-        {
+        OnTriggerEnter2D(Clover_Collider);
+        this.transform.Translate(new Vector2(0.0f, Time.deltaTime * -5.0f));
+        if (this.transform.position.y < -7)
             Set_Position();
-        }
-        else
-        {
-            this.transform.Translate(new Vector2(0.0f, Time.deltaTime * -5.0f));
-        }
     }
 
     private void Set_Position()
@@ -43,21 +32,11 @@ public class Clover : MonoBehaviour
         this.transform.position = new Vector2(rnd[0], rnd[1]);
     }
 
-    private bool IsTouched()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Clover_RigidBody.velocity.y <= 0)
+        if(collision.gameObject.tag=="Player")
         {
-            foreach (Transform point in TouchPoints)
-            {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, TouchRadius, whatIsTouched);
-
-                for (int i = 0; i < colliders.Length; i++)
-                {
-                    if (colliders[i].gameObject != gameObject)
-                        return true;
-                }
-            }
+            Set_Position();
         }
-        return false;
     }
 }
