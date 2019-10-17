@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private static Player instance;
-
+    /*private static Player instance;
     public static Player Instance
     {
         get
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
             }
             return instance;
         }
-    }
+    }*/
 
     public static int life;
     private Rigidbody2D m_RigidBody;
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (life > 0)
+        if (life > 0)
         {
             float horizontal = Input.GetAxis("Horizontal");
 
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("11");
                 if (isGrounded)
                 {
                     isGrounded = false;
@@ -76,6 +78,8 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        else
+            SceneManager.LoadScene("Restart_Scene");
     }
 
     private void Flip_Player(float horizontal)

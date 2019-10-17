@@ -18,10 +18,13 @@ public class Clover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnTriggerEnter2D(Clover_Collider);
-        this.transform.Translate(new Vector2(0.0f, Time.deltaTime * -5.0f));
-        if (this.transform.position.y < -7)
-            Set_Position();
+        if (Player.life > 0)
+        {
+            OnTriggerEnter2D(Clover_Collider);
+            this.transform.Translate(new Vector2(0.0f, Time.deltaTime * -5.0f));
+            if (this.transform.position.y < -7)
+                Set_Position();
+        }
     }
 
     private void Set_Position()

@@ -6,20 +6,32 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public static int scoreValue;
+    public bool check = true;
     Text score;
+    Text life;
     // Start is called before the first frame update
     void Start()
     {
         scoreValue = 0;
         score = GetComponent<Text>();
+        StartCoroutine(WaitForIt());
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (Player.life > 0)  
+        if (Player.life > 0)  
         {
-            score.text = "Score : " + scoreValue;
+            check = false;
+            score.text = "Score : " + scoreValue+"\n"+ "Life : " + Player.life; 
+
         }
+    }
+    IEnumerator WaitForIt()
+    {
+        check = true;
+        scoreValue++;
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(WaitForIt());
     }
 }
