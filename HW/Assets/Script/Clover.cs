@@ -6,8 +6,8 @@ public class Clover : MonoBehaviour
 {
     private Rigidbody2D Clover_RigidBody;
     private Collider2D Clover_Collider;
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
     void Start()
     {
         Set_Position();

@@ -207,11 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa16b9fdbb7f5d40bba5d3a7fccad2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchPoints: []
-  TouchRadius: 0
-  whatIsTouched:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!61 &84863427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -370,7 +365,7 @@ GameObject:
   - component: {fileID: 190157929}
   - component: {fileID: 190157928}
   m_Layer: 0
-  m_Name: long grass
+  m_Name: grass
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,15 +1898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0896792afa4835243ba1cc0a34dd52ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPoints:
-  - {fileID: 579374242}
-  - {fileID: 1842276469}
-  - {fileID: 131566416}
-  groundRadius: 0.1
+  groundPoints: []
+  groundRadius: 0
   whatIsGrounded:
     serializedVersion: 2
     m_Bits: 4294967295
-  JumpForce: 200
+  JumpForce: 0
 --- !u!1 &1842276468
 GameObject:
   m_ObjectHideFlags: 0
